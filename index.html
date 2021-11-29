@@ -15,6 +15,22 @@
     <link href="/css/addons.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/fe5629e38b.js"></script>
     <script async src="https://arc.io/widget.min.js#84pnUeZo"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      setTimeout(function() {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        if (params.code) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Added',
+            text: "Added to the guild successfully!",
+            confirmButtonText: 'Thanks!',
+            backdrop: 'rgba(0,0,0,0.7)',
+          })
+      }
+      }, 500);
+    </script>
   </head>
 
   <body oncontextmenu="return false">
