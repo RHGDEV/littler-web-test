@@ -1,22 +1,26 @@
-$.getJSON('https://api.neeko-bot.xyz/servers', response => typeText(response.servers)).catch(o_O => typeText());
-
-function typeText(servers = null) {
-    const strings = ["Share your music tastes with your friends."];
-    if (servers) strings.push(`Neeko is already on ${servers} servers! 🎉`);
-    strings.push(...[
-        "Transform any song with  unique audio effects.",
-        "Play Guess The Song and earn points.",
-        "Organize Karaoke nights with your friends or family.",
-        "Neeko is the easiest way to play music in your server."
-    ]);
-
-    new TypeIt("#typingtext", {
-        breakLines: false,
-        strings,
-        speed: 75,
-        loop: true,
-        deletespeed: 1,
-        nextStringDelay: 3000,
-        waitUntilVisible: true
-    });
-};
+let i = new TypeIt("#typingtext", {
+    string: [],
+    speed: 100,
+    waitUntilVisible: true
+})
+.type('Audit Logs. Redefined.')
+.pause(500)
+.move(-11)
+.options({speed: 100})
+.delete(11)
+.pause(300)
+.options({speed: 100})
+.type('Moderation.')
+.pause(500)
+.options({speed: 200})
+.delete(11)
+.pause(300)
+.options({speed: 100})
+.type('Everything.')
+.pause(500)
+.move(null, { to: "END" })
+.options({speed: 200})
+.delete(12)
+.options({speed: 100})
+.type(' needed within a discord bot.')
+.go();
