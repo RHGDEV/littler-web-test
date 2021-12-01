@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="The Best Multi-purpose bot that suits all your needs! Moderation, Music, Games, Utilities, We cover it all!"/>
+    <meta name="description" content="The Best Multi-purpose bot that suits all your needs! Logbooks, Moderation, Games, Utilities, We cover it all!"/>
     <meta name="author" content="Little R" />
     <meta property="og:image" content="/assets/logo.png"/>
     <meta property="og:url" content="https://littler.tk" />
@@ -15,28 +15,30 @@
     <link href="/css/addons.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/fe5629e38b.js"></script>
     <script async src="https://arc.io/widget.min.js#84pnUeZo"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/typeit@8.0.7/dist/index.umd.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.2.1"></script>
+    <script src="//cdn.jsdelivr.net/npm/typeit@8.0.7"></script>
     <script src="/js/texts.js" async></script>
+    <script src="/js/stats.js" async></script>
     <script>
-      setTimeout(function() {
+      setTimeout(async () => {
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries());
-        if (params.code) {
+        if (params.code && params["guild_id"]) {
           Swal.fire({
             icon: 'success',
             title: 'Added',
-            text: "Added to the guild successfully!",
+            text: "Little R was added successfully!",
             confirmButtonText: 'Thanks!',
             backdrop: 'rgba(0,0,0,0.7)',
-          })
-      }
+          });
+        }
       }, 500);
     </script>
   </head>
 
   <body oncontextmenu="return false">
-    <header class="text-gray-400 bg-black body-font" id="hd-background">
+    <header class="md:fixed bg-black bg-opacity-100 w-full text-gray-400 body-font" id="hd-background">
       <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-white mb-1 md:mb-0">
           <a href="/"><img src="assets/logo.png" width="40" height="40"></a>
@@ -44,26 +46,24 @@
         </a>
         <nav class="flex md:absolute right-0 md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center">
           <a href="/" class="mr-5 text-white">Home</a>
-          <a href="/commands.html" class="mr-5 hover:text-gray-200">Commands</a>
-          <a href="/privacy.html" class="mr-5 hover:text-gray-200">Privacy Policy</a>
+          <!--<a href="/commands" class="mr-5 hover:text-gray-200">Commands</a>-->
+          <a href="/privacy" class="mr-5 hover:text-gray-200">Privacy Policy</a>
           <a href="/support" class="mr-5 hover:text-gray-200">Support Server</a>
-          <a href="/invite" class="text-black bg-white py-2 px-5 mr-5 hover:text-gray-500">Invite</a>
+          <a href="/invite" class="mr-5 md:text-black md:bg-white md:py-2 md:px-5 hover:text-gray-500 md:block">Invite</a>
         </nav>
       </div>
     </header>
     <hr/>
-    <section class="text-gray-400 bg-gray-900 outline-none body-font h-screen" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(/assets/mbr-1624x1080.jpg);">
+    <!--<div id="background" style="z-index:-1;position:fixed;top:-50%;left:-50;width:200%;height:200%;background-size:cover;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;
+        background-image:url(https://images.unsplash.com/photo-1488229297570-58520851e868?&auto=format&w=1920&q=80)";  
+  elem.style.;"><div id="background-cover"></div></div>-->
+    <section class="text-gray-400 outline-none body-font h-screen" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(/assets/mbr-1624x1080.jpg);">
       <div class="container mx-auto flex px-5 py-20 items-center flex-col">
         <!--<img class="lg:w-1/4 md:w-3/6 w-1/8 mb-10 object-cover object-center" alt="logo" src="/assets/logo.png"/>-->
         <div class="flex justify-center items-center object-center w-1/2"><img class="w-1/2" alt="logo" src="/assets/logo.png"/></div>
         <div class="text-center lg:w-1/3 w-full">
           <h1 class="title-font sm:text-4xl text-3xl mb-2 font-medium text-white">Little R</h1>
-          <!--<p class="leading-relaxed mb-2">Audit Logs. Redefined.</p>-->
           <p class="leading-relaxed mb-2"><span id="typingtext"></span></p>
-          <!--<div class="text-center">
-            <div class="inline-block align-top"><p class="leading-relaxed mb-2" id="typingtext"></p></div>
-            <div class="inline-block align-top"><p class="leading-relaxed mb-2">Redefined.</p></div>
-          </div>-->
           <div class="flex justify-center">
             <button class="inline-flex text-black bg-white border-0 py-2 px-6 hover:text-gray-500">
               <a href="/invite">Add To Discord</a>
@@ -76,79 +76,40 @@
       </div>
     </section>
     <hr/>
-    <section class="text-gray-400 body-font bg-gray-900" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(/assets/adi-constantin-2000x1125.jpg);">
+    <section class="text-gray-400 body-font" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(/assets/adi-constantin-2000x1125.jpg);">
       <div class="mx-auto container px-5 py-20">
         <h1 class="mx-auto sm:text-3xl text-2xl font-medium title-font text-white text-center">Little R Features</h1>
         <div class="mx-auto mt-5 mb-10 h-1 w-1/5 bg-white rounded"></div>
-        <!--<div class="flex flex-wrap -m-4">
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-black bg-opacity-40 p-6">
-              <span class="fas fa-cogs fa-3x text-white mb-3"></span>
-              <h2 class="text-lg text-white font-medium title-font mb-4">Configurable Features</h2>
-              <p class="leading-relaxed text-base">
-                You can customise Little R to work according to your server!
-              </p>
-            </div>
-          </div>
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-black bg-opacity-40 p-6">
-              <span class="fas fa-laugh-beam fa-3x text-white mb-3"></span>
-              <h2 class="text-lg text-white font-medium title-font mb-4">Fun Commands</h2>
-              <p class="leading-relaxed text-base">
-                Little R Includes Fun Commands, There are bunch of fun commands you'll love to check out!
-              </p>
-            </div>
-          </div>
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-black bg-opacity-40 p-6">
-              <span class="fas fa-info-circle fa-3x text-white mb-3"></span>
-              <h2 class="text-lg text-white font-medium title-font mb-4">Informational</h2>
-              <p class="leading-relaxed text-base">
-                So you can have some info relating a user, server, our bot or even emojis!
-              </p>
-            </div>
-          </div>
-          <div class="xl:w-1/4 md:w-1/2 p-4">
-            <div class="bg-black bg-opacity-40 p-6">
-              <span class="fas fa-cogs fa-3x text-white mb-3"></span>
-              <h2 class="text-lg text-white font-medium title-font mb-4">Utility Commands</h2>
-              <p class="leading-relaxed text-base">
-                Little R has tons of utilites, which are going to be very useful
-                for your Discord Server.
-              </p>
-            </div>
-          </div>
-        </div>-->
         <div class="grid grid-cols-2 gap-4">
-          <div class="bg-black bg-opacity-80 p-6">
+          <div class="bg-black bg-opacity-80 p-6 text-center">
             <span class="fas fa-cogs fa-3x text-white mb-3"></span>
-            <h2 class="text-lg text-white font-medium title-font mb-4">Configurable Features</h2>
+            <h2 class="text-lg text-white font-medium title-font mb-4">Configurable</h2>
             <p class="leading-relaxed text-base">
-              Little R is very customiseable, you can customise Little R to work according to your server!
+              Very customizable, you can customise Little R to work according to your server!
             </p>
           </div>
-          <div class="bg-black bg-opacity-80 p-6">
+          <div class="bg-black bg-opacity-80 p-6 text-center">
             <span class="fas fa-laugh-beam fa-3x text-white mb-3"></span>
             <h2 class="text-lg text-white font-medium title-font mb-4">Fun Commands</h2>
             <p class="leading-relaxed text-base">
-              Little R Includes Fun Commands, There are bunch of fun commands you'll love to check out!
+              Never have a dull moment, there are bunch of fun commands you'll love to check out!
             </p>
           </div>
-          <div class="col-span-2 bg-black bg-opacity-80 p-6">
+          <div class="col-span-2 bg-black bg-opacity-80 p-6 text-center">
             <span class="fas fa-scroll fa-3x text-white mb-3"></span>
-            <h2 class="text-lg text-white font-medium title-font mb-4">Rich Audit Log</h2>
+            <h2 class="text-lg text-white font-medium title-font mb-4">Rich Logbooks</h2>
             <p class="leading-relaxed text-base">
-              Rich audit log for moderators and admins. The audit log is a powerful tool for tracking and auditing server activity.
+              Rich logbooks for moderators and admins.<br>The logbooks are a powerful tool for tracking and auditing server activity.
             </p>
           </div>
-          <div class="bg-black bg-opacity-80 p-6">
+          <div class="bg-black bg-opacity-80 p-6 text-center">
             <span class="fas fa-info-circle fa-3x text-white mb-3"></span>
             <h2 class="text-lg text-white font-medium title-font mb-4">Informational</h2>
             <p class="leading-relaxed text-base">
-              So you can have some info relating a user, server, our bot or even emojis!
+              Informational data for your server. This includes server information, server statistics, and more!
             </p>
           </div>
-          <div class="bg-black bg-opacity-80 p-6">
+          <div class="bg-black bg-opacity-80 p-6 text-center">
             <span class="fas fa-toolbox fa-3x text-white mb-3"></span>
             <h2 class="text-lg text-white font-medium title-font mb-4">Utility</h2>
             <p class="leading-relaxed text-base">
@@ -160,41 +121,38 @@
         </div>
     </section>
     <hr/>
-    <!--<section class="text-gray-400 bg-gray-900 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap -m-4 text-center">
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-white px-4 py-6">
-              <span class="fas fa-slash fa-3x text-white mb-3"></span>
-              <h2 class="title-font font-medium text-3xl text-white">170+</h2>
-              <p class="leading-relaxed">Commands</p>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-white px-4 py-6">
-              <span class="fas fa-users fa-3x text-white mb-3"></span>
-              <h2 class="title-font font-medium text-3xl text-white">40k+</h2>
-              <p class="leading-relaxed">Users</p>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-white px-4 py-6">
-              <span class="fas fa-server fa-3x text-white mb-3"></span>
-              <h2 class="title-font font-medium text-3xl text-white">430+</h2>
-              <p class="leading-relaxed">Servers</p>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-white px-4 py-6">
-              <span class="fas fa-hashtag fa-3x text-white mb-3"></span>
-              <h2 class="title-font font-medium text-3xl text-white">3k+</h2>
-              <p class="leading-relaxed">Channels</p>
-            </div>
-          </div>
+    <section id="stat-container" class="text-gray-400 bg-gray-900 body-font" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(https://images.unsplash.com/photo-1488229297570-58520851e868?&auto=format&w=1920&q=80);">
+    <!--<section class="text-gray-400 bg-gray-900 body-fontW" style="background-position: 50% 50%; background-repeat: no-repeat; background-image: url(https://images.unsplash.com/photo-1488229297570-58520851e868?&auto=format&w=1920&q=80); position: fixed; top: 0px; left: 0px; width: 794px; height: 635px; overflow: hidden; pointer-events: none; transition: transform 0s linear -1ms, -webkit-transform 0s linear -1ms; background-size: 954.85px 635px; visibility: visible; transform: translate3d(0px, 0px, 0px);">-->
+      <div class="grid grid-cols-4 gap-4 px-5 py-24 mx-auto">
+        <!--border-2 border-white-->
+        <div class="bg-black bg-opacity-80 p-4 text-center">
+          <span class="fas fa-slash fa-3x text-white mb-3"></span>
+          <h2 class="title-font font-medium text-3xl text-white" id="dt-commands">...</h2>
+          <p class="leading-relaxed">Commands</p>
         </div>
+        <div class="col-span-2 bg-black bg-opacity-80 p-4 text-center">
+          <span class="fas fa-server fa-3x text-white mb-3"></span>
+          <h2 class="title-font font-medium text-3xl text-white" id="dt-servers">...</h2>
+          <p class="leading-relaxed">Servers</p>
+        </div>
+        <div class="bg-black bg-opacity-80 p-4 text-center">
+          <span class="fas fa-users fa-3x text-white mb-3"></span>
+          <h2 class="title-font font-medium text-3xl text-white" id="dt-users">...</h2>
+          <p class="leading-relaxed">Users</p>
+        </div>
+        <!--<div class="col-span-2 bg-black bg-opacity-80 p-4 text-center">
+          <span class="fas fa-hourglass fa-3x text-white mb-3"></span>
+          <h2 class="title-font font-medium text-3xl text-white" id="dt-uptime">...</h2>
+          <p class="leading-relaxed">Uptime</p>
+        </div>
+        <div class="col-span-2 bg-black bg-opacity-0 p-4 text-center">
+          <span class="fas fa-eye fa-3x text-white mb-3"></span>
+          <h2 class="title-font font-medium text-3xl text-white" id="dt-soon">...</h2>
+          <p class="leading-relaxed">..</p>
+        </div>-->
       </div>
-    </section>-->
-    <hr />
+    </section>
+    <hr/>
     <footer class="text-gray-400 bg-black body-font">
       <div class="container py-8 mx-auto flex items-center sm:flex-row flex-col">
         <a class="flex title-font font-medium items-center justify-center text-white">

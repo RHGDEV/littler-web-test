@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-    html,body {
-
-    margin:0;
-
-    padding:0;
-
-    overflow-x:hidden;
-
-}
-    </style>
   <head>
     <link rel="shortcut icon" type="image/png" href="/assets/logo.png"/>
     <meta charset="UTF-8" />
@@ -20,7 +9,7 @@
     <meta name="author" content="Little R - Privacy Policy & Terms of Service" />
     <meta property="og:image" content="/assets/logo.png"/>
     <meta property="og:url" content="https://littler.tk/privacy" />
-    <meta name="theme-color" content="#FF002B" />
+    <meta name="theme-color" content="#000000"/>
     <title>Little R - Privacy Policy & Terms of Service</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
     <link href="/css/addons.css" rel="stylesheet"/>
@@ -29,7 +18,7 @@
   </head>
 
   <body oncontextmenu="return false">
-    <header class="top-0 z-50 md:sticky text-gray-400 bg-black body-font" id="hd-background">
+    <header class="md:fixed bg-black bg-opacity-100 w-full text-gray-400 body-font" id="hd-background">
       <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-white mb-1 md:mb-0">
           <a href="/"><img src="assets/logo.png" width="40" height="40"></a>
@@ -37,171 +26,112 @@
         </a>
         <nav class="flex md:absolute right-0 md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center">
           <a href="/" class="mr-5 hover:text-gray-200">Home</a>
-          <a href="/commands" class="mr-5 hover:text-gray-200">Commands</a>
+          <!--<a href="/commands" class="mr-5 hover:text-gray-200">Commands</a>-->
           <a href="/privacy" class="mr-5 text-white">Privacy Policy</a>
           <a href="/support" class="mr-5 hover:text-gray-200">Support Server</a>
-          <a href="/invite" class="text-black bg-white py-2 px-5 mr-5 hover:text-gray-500">Invite</a>
+          <a href="/invite" class="mr-5 md:text-black md:bg-white md:py-2 md:px-5 hover:text-gray-500 md:block">Invite</a>
         </nav>
       </div>
     </header>
     <hr />
-    <section class="text-gray-400 body-font bg-gray-900">
+    <section class="text-gray-400 body-font bg-black">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-20">
           <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Privacy Policy & TOS</h1>
             <p class="lg:w-1/2 w-full leading-relaxed text-opacity-80">
-              By using the bot, You agree to our Privacy Policy and Tos
+              By using the service, You agree to our Privacy Policy and Tos
+              <br><br><b>Last updated: November 30, 2021</b>
             </p>
             <br />
-            <div class="flex justify-left">
-              <button class="inline-flex text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white">
-                <a href="#privacy-policy">Privacy Policy</a>
-              </button>
-              <button class="ml-4 inline-flex text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white">
-                <a href="#tos">ToS</a>
-              </button>
+            <div class="grid grid-cols-1 gap-4">
+              <div class="">
+                <div class="border border-red-500 border-opacity-75 p-6">
+                  <h2 class="text-lg text-whitefont-medium title-font mb-4">Agreement</h2>
+                  <p class="leading-relaxed text-base">
+                    By using this service you agree to abide by the below policies.
+                    <br>Additionally Server Owners/Managers should inform thier members about this policy.
+                    <br><br>Any exploitation <b>will/may</b> lead to a blacklist.
+                    <br><br>If you ever disagree with this policy you may stop using the service anytime and automatic data removal will start.
+                    <br>If you the server member do not agree with this policy you may leave the server that uses this service and may stop using the service.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <br/>
-              <div class="mx-auto h-1 w-3/5 bg-white rounded" id="privacy-policy"></div>
-              <br/>
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white text-center w-full mx-auto" id="privacy-policy">
-                Privacy Policy
-              </h1>
-              <br/>
-              <div class="grid grid-cols-3 gap-4">
-                <div class="col-span-2">
-                  <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-4">
-                      What data do we store?
-                    </h2>
-                    <p class="leading-relaxed text-base">
-                      ...
-                    </p>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-4">
-                      Why we need this data?
-                    </h2>
-                    <p class="leading-relaxed text-base">
-                      ...
-                    </p>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-4">
-                      How we use this data?
-                    </h2>
-                    <p class="leading-relaxed text-base">
-                      ...
-                    </p>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-4">
-                      How long do we store your data?
-                    </h2>
-                    <p class="leading-relaxed text-base">
-                      ...
-                    </p>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                      Who do we share the data with?
-                    </h2>
-                    <p class="leading-relaxed text-base">
-                      ...
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-3">
-                  <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                      Got concerns or Queries?
-                    </h2>
-                    <p class="leading-relaxed text-base">
-                      ...
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <br/>
-              <div class="mx-auto h-1 w-3/5 bg-white rounded" id="tos"></div>
-              <br/>
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white text-center w-full mx-auto">
-                Terms of Service
-              </h1>
-              <br/>
-              <div class="grid grid-cols-2 gap-4">
-                  <div class="col-span-2">
-                   <div class="border border-gray-700 border-opacity-75 p-6">
-                   <h2 class="text-lg text-white font-medium title-font mb-2">
-                       Introduction to RHG Services
-                   </h2>
-                     <p class="leading-relaxed text-base">
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                        Legal Age
-                      </h2>
-                      <p class="leading-relaxed text-base">
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                        Proper Usage
-                      </h2>
-                      <p class="leading-relaxed text-base">
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                        Prohibitions
-                      </h2>
-                      <p class="leading-relaxed text-base">
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                        Changes to Privacy Policy and ToS
-                      </h2>
-                      <p class="leading-relaxed text-base">
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-span-2">
-                    <div class="border border-gray-700 border-opacity-75 p-6">
-                    <h2 class="text-lg text-white font-medium title-font mb-2">
-                        Intellectual Property
-                      </h2>
-                      <p class="leading-relaxed text-base">
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div>
+          <br/>
+          <div class="grid grid-cols-3 gap-4">
+          <div class="">
+            <div class="border border-gray-700 border-opacity-75 p-6">
+              <h2 class="text-lg text-white font-medium title-font mb-4">Collected Information</h2>
+              <p class="leading-relaxed text-base">
+                Information stored is properly encrypted.
+                <br>Stored information contains:
+                <br><br>Guild Names & IDs
+                <br>Channel IDs
+                <br>Role IDs
+                <br>User Names & IDs
+                <br>Message Data
+              </p>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <div class="border border-gray-700 border-opacity-75 p-6">
+              <h2 class="text-lg text-white font-medium title-font mb-4">
+                How we use this data?
+              </h2>
+              <p class="leading-relaxed text-base">
+                <b>Guilds</b>
+                <br>The name and ID is used to create a database entry for your server. This allows you to setup your logbooks and more.
+                <br><b>Channels</b>
+                <br>Only ID is used to setup channels for logbooks, welcoming and goodbye channels.
+                <br><b>Users</b>
+                <br>Your username/tag and ID is used to create a database entry for yourself. This allows you to use the bot's features as currency, profies, and afk status.
+                <br><b>Messages</b>
+                <br>Your message data is used for the bot's message logging system. This data is used at the server's discretion.
+              </p>
+            </div>
+          </div>
+          <div class="">
+            <div class="border border-gray-700 border-opacity-75 p-6">
+              <h2 class="text-lg text-white font-medium title-font mb-4">
+                How long do we store your data?
+              </h2>
+              <p class="leading-relaxed text-base">
+                Listed below is the time periods data will be automatically removed if it hasn't been touched.
+                <br><br>Guild Configurations 14 days
+                <br>User Cash 30 Days
+              </p>
+            </div>
+          </div>
+          <div class="">
+            <div class="border border-gray-700 border-opacity-75 p-6">
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Who do we share the data with?
+              </h2>
+              <p class="leading-relaxed text-base">
+                Only the developer(s) for the services have access to the information and is <b>NEVER</b> given out to third parties, unless ordered by law.
+              </p>
+            </div>
+          </div>
+          <div class="">
+            <div class="border border-gray-700 border-opacity-75 p-6">
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Questions, Concerns and Data Removal
+              </h2>
+              <p class="leading-relaxed text-base">
+                Join the <a class="text-white" href="/support" style="text-decoration: underline;">support server</a> for questions, concerns, or removal requests.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-3">
+            <div class="border border-gray-700 border-opacity-75 p-6">
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Thanks for using the bot!
+              </h2>
+              <p class="leading-relaxed text-base">
+                Join the <a class="text-white" href="/support" style="text-decoration: underline;">support server</a> to request a feature or to report a bug.
+              </p>
             </div>
           </div>
         </div>

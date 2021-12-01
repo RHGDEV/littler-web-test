@@ -1,9 +1,8 @@
-#background {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/assets/mbr-1624x1080.jpg);
-}
-
-#hd-background {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8)), url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?&auto=format&fit=crop&w=869&q=80);
+@media only screen and (min-width: 768px) {
+  #hd-background {
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(139, 101, 101, 0.1));
+    /*background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8)), url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?&auto=format&fit=crop&w=869&q=80);*/
+  }
 }
 
 bg-gray-200:hover {
@@ -14,7 +13,16 @@ bg-gray-200:hover {
   color: #407BA7;
 }
 
+.overlay {
+  background: #222;
+}
 
+#background-cover {
+	position: fixed;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(5deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
 
 ::-webkit-scrollbar{width:7px}
 ::-webkit-scrollbar-track{background:#292b30}
