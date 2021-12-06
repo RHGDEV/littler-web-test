@@ -26,10 +26,12 @@
         const params = Object.fromEntries(urlSearchParams.entries());
         if (params.code && params["guild_id"]) {
           Swal.fire({
+            timer: 3500,
+            showConfirmButton: false,
+            timerProgressBar: true,
             icon: 'success',
-            title: 'Added',
-            text: "Little R was added successfully!",
-            confirmButtonText: 'Thanks!',
+            title: 'Authorized',
+            html: 'Little R was added successfully!',
             backdrop: 'rgba(0,0,0,0.7)',
           });
         }
