@@ -3,10 +3,11 @@
     let commands = await fetch('https://api.littler.tk/stats');
     if (commands.status != 200) throw console.error("Couldn't fetch commands.");
     commands = await commands.json()
+    let cmd = commands.commands
     commands = commands.commandDisplay;
 
     const dText = document.getElementById('descriptiveText');
-    dText.innerText = `Little R offers a wide range of commands.\n${commands.length} categories and ${commands.map((c) => c.commands.length).reduce((a, b) => a + b, 0)} commands are available right now!`
+    dText.innerText = `Little R offers a wide range of commands.\n${commands.length} categories and ${cmd} commands are available right now!`
     const cmdList = document.querySelector('#cmdList');
     const navGrid = document.querySelector('#cmdNav');
     navGrid.classList = `grid grid-cols-${Math.ceil(commands.length/2)} gap-4`

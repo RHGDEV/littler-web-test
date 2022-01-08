@@ -20,9 +20,8 @@ setStats = (data = {}) => {
     if (data) {
         console.log(data);
         if (data.nodata == 1) return $("#stat-container").removeAttr("style").hide();
-        const { commands, servers, uptime, users, commandDisplay } = data;
-        //setDiv("#dt-commands", commands);
-        setDiv("#dt-commands", commandDisplay.map((c) => c.commands.length).reduce((a, b) => a + b, 0));
+        const { commands, servers, uptime, users } = data;
+        setDiv("#dt-commands", commands);
         setDiv("#dt-servers", servers);
         //setDiv("#dt-uptime", time(uptime));
         setDiv("#dt-users", numb(users));
