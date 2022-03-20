@@ -18,12 +18,19 @@
   </head>
 
   <body oncontextmenu="return false">
-    <header class="text-gray-400 bg-black body-font" id="hd-background">
+    <header class="md:fixed bg-black bg-opacity-100 w-full text-gray-400 body-font" id="hd-background">
       <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-white mb-1 md:mb-0">
           <a href="/"><img src="assets/logo.png" width="40" height="40"></a>
           <a href="/"><h1 class="title-font font-medium md:ml-5 text-white hidden md:block">Little R</h1></a>
         </a>
+        <nav class="flex md:absolute right-0 md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center">
+          <a href="/" class="mr-5 hover:text-gray-200">Home</a>
+          <a href="/commands" class="mr-5 hover:text-gray-200">Commands</a>
+          <a href="/privacy" class="mr-5 hover:text-gray-200">Privacy Policy</a>
+          <a href="/support" class="mr-5 hover:text-gray-200">Support Server</a>
+          <a href="/invite" class="mr-5 md:text-black md:bg-white md:py-2 md:px-5 hover:text-gray-200 md:hover:text-gray-300 md:block rounded-md">Invite</a>
+        </nav>
       </div>
     </header>
     <hr/>
